@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: EjercicioIntegradorMiVillanoObjetosoConsigna
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: EjercicioIntegradorMiVillanoObjetosoConsigna; singleton:=true
+Bundle-SymbolicName: MiVillanoObjetoso-tdominguez33;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: com.ibm.icu,
  org.eclipse.xtext,

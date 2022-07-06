@@ -1,0 +1,45 @@
+import minions.*
+import armas.*
+import villanos.*
+import maldades.*
+
+program miVillanoObjetoso {
+
+	const gru 		= new Villano()
+	const stuart 	= new Minion(nombre = "Stuart")
+	const bob 		= new Minion(nombre = "Bob")
+	const kevin 	= new Minion(nombre = "Kevih")
+	const carl 		= new Minion(nombre = "Carl")
+	const jerry 	= new Minion(nombre = "Jerry")
+	gru.nuevoMinion(stuart)
+	gru.nuevoMinion(bob)
+	gru.nuevoMinion(kevin)
+	gru.nuevoMinion(carl)
+	gru.nuevoMinion(jerry)
+	gru.alimentar(carl, 250)					//Carl come 250 bananas (Para robar la piramide)
+	gru.alimentar(stuart, 250)					//Stuart come 250 bananas (Para robar la piramide y el suero)
+	gru.alimentar(bob, 100)						//Bob come 150 bananas (Para robar el suero)
+	gru.otorgarArma(kevin, rayoParaEncoger)		//Le damos un rayo para encoger a Kevin (Para robar la luna)
+	console.println("Cantidad de bananas de Carl antes: " + carl.bananas().toString())
+	console.println("Gru intenta robar las piramides")
+	gru.robar(piramides)
+	console.println("Cantidad de bananas de Carl después: " + carl.bananas().toString())
+	console.println("===================================================================")
+	console.println("Stuart es Peligroso antes: " + stuart.esPeligroso().toString())
+	console.println("Bob es Peligroso antes: " + bob.esPeligroso().toString())
+	console.println("Gru intenta robar el suero mutante")
+	gru.robar(sueroMutante)
+	console.println("Stuart es Peligroso despues: " + stuart.esPeligroso().toString())
+	console.println("Bob es Peligroso despues: " + bob.esPeligroso().toString())
+	console.println("===================================================================")
+	console.println("Armas de Kevin antes: ")
+	kevin.armas().forEach({arma => console.println(arma.nombre())})
+	console.println("Gru intenta robar la luna")
+	gru.robar(luna)
+	console.println("Armas de Kevin despues: ")
+	kevin.armas().forEach({arma => console.println(arma.nombre())})
+	console.println("===================================================================")
+	console.println("Minion mas útil: " + gru.minionMasUtil().nombre())
+	console.println("Minions mas inútiles: ")
+	gru.minionsMasInutiles().forEach({minion => console.println(minion.nombre())})
+}
